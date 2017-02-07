@@ -9,7 +9,7 @@ services:
       - "3000:3000"
       - "5858:5858"
     volumes:
-      - .:/usr/src/app
+      - .:/app
     links:
       - mean-sample-redis:redis
       - mean-sample-mongo:mongodb
