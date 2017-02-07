@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mean-sample-node:
+    build: .
+    environment:
+      - MONGODB_URL=mongodb://mongodb/social
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "3000:3000"
+      - "5858:5858"
+    volumes:
+      - .:/usr/src/app
+    links:
+      - mean-sample-redis:redis
+      - mean-sample-mongo:mongodb
+  mean-sample-redis:
+    image: redis
+  mean-sample-mongo:
+    image: mongo
