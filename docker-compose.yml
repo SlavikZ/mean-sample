@@ -8,8 +8,8 @@ services:
     ports:
       - "3000:3000"
       - "5858:5858"
-    volumes:
-      - .:/app
+#    volumes:
+#      - .:/app
     links:
       - mean-sample-redis:redis
       - mean-sample-mongo:mongodb
